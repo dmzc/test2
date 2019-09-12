@@ -1,0 +1,60 @@
+<script>
+   function wm(){
+    var name="wm内置";   
+    //alert(this.name + '-----'+typeof(this))
+   };
+   var bg={name:'bg'};
+   bg.wm=wm;
+   bg.wm();
+   var sj={name:'sj'};
+   sj.wm=wm;
+   sj.wm();
+   var bg1={name:'bg1'};
+   wm.call(bg1);
+   bg.wm.call(bg1);
+   wm();
+wm.call(wm);
+({name:'nobody',wm:wm}).wm()
+//this只是任意对象和function元素结合时的一个概念
+function My(){this.name='jack'}
+var obj={name:'sdf'}
+My.call(obj)
+//alert(obj.name)
+function P(name){
+    this.name=name
+    this.SayHello=function(){
+        console.log(this.name)
+    }
+}
+function S(name,salary){
+    P.call(this,name)
+    this.salary=salary;
+    this.show=function(){
+        console.log(this.name+"---"+this.salary);
+        
+    }
+}
+var obj1=new S('lily',52.25)
+var obj2=new S('lildy',552.25)
+console.log(obj1.show == obj2.show);
+obj1.show()
+obj1.SayHello()
+//使用这种this创建的对象，每个对象都具有方法的一份拷贝
+//prototype，所有function对象都有一个prototype的属性，这个属性本身有时object对象
+//在构造函数上定义的所有属性和方法，都是可以通过其构造对象直接访问和调用的
+// 提供一群同类对象共享属性和方法的机制
+//prototype原型链的概念
+//原型链的最 末端prototype属性指向一个原型对象，有诸如toString等方法
+//在一个构造函数的原型上添加的属性会被立即添加到已经创建的对象身上
+function Person(name) {
+    this.name=name
+};
+Person.prototype={
+    sayHello:function(){console.log(this.name)}
+};
+var p1=new Person('sdfw');
+var p2=new Person('sdsdffw')
+p1.sayHello();
+p2.sayHello();
+console.log(p1.sayHello == p2.sayHello)
+</script>
