@@ -1,0 +1,40 @@
+<script>
+    // function myFunc(){
+
+    // }
+    // alert(typeof(typeof(myFunc)))
+    // alert(f1)
+    //  f1=function(){
+    //     alert("f1")
+    // }
+    // alert(f1)
+    // f1()
+    // var f1=function(){
+    //     alert("f2")
+    // }
+    // f1()
+    // alert(f3)
+    // function f3(){
+    //     alert("f3")
+    // }
+    // f3()
+    // alert(f3)
+    // function f3(){
+    //     alert("f4")
+    // }
+    // f3()
+function f4(){
+    //在window对象上创建了一个属性
+    gf="sdgf"
+    alert(gf)
+    alert(f4.caller)
+}
+// f4()
+// alert(gf)
+f5={}
+f4.call(f5)
+console.log('tag', f5)
+alert(gf)
+var st="function f6(){var gh1='sdfsdawewer';console.log(arguments)};f6()"
+eval(st)
+</script>

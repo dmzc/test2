@@ -1,0 +1,31 @@
+<<script>
+    var jsd={
+    name:'sfd',
+    age:45
+    }
+    var jsd1=function(){}
+    jsd1.prototype.pro="sf"
+    console.log(typeof(jsd))
+    console.log(jsd)
+    var jsf=eval(jsd)
+    var jsf1=new jsd1()
+    console.log(jsf)
+    console.log(jsd)
+    console.log(jsd1)
+    console.log(jsf1)
+    function Person(name){
+    this.name = name
+    }
+    Person.prototype.SayHello=function(){alert(this.name)}
+    function Employee(name,salary){
+    Person.call(this,name)
+    this.salary=salary
+    }
+    Employee.prototype=new Person()
+    Employee.showMoney=function(){
+    alert(this.name+"----"+this.salary)
+    }
+    var bg=new Person("bg")
+    var sj=new Employee("sj",45)
+    alert(bg.sayHello == sj.sayHello)
+    </script>
