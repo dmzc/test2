@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //click作为函数名称定义会出错，绑定的函数传过来的对象都是window对象
+        function click1(this1){
+            console.log(this1)
+        }
+    </script>
+</head>
+<body>
+    <!-- <div onclick="console.log(this)">
+        dfgdg
+    </div> -->
+    <div onclick="click1(this)">
+            dfgdg
+        </div>
+</body>
+</html>
